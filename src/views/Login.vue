@@ -9,7 +9,7 @@
         ref="formDataRef"
         @submit.prevent
       >
-        <div class="login-title">Easy云盘</div>
+        <div class="login-title">Enjoy云盘</div>
         <!--input输入-->
         <el-form-item prop="email">
           <el-input

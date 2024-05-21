@@ -159,6 +159,7 @@ const showUploader = ref(false);
 const uploaderRef = ref();
 const addFile = (data) => {
   const { file, filePid } = data;
+  console.log(file);
   showUploader.value = true;
   uploaderRef.value.addFile(file, filePid);
 };

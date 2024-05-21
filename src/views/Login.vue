@@ -64,7 +64,7 @@
                 <p>1、在垃圾箱中查找邮箱验证码</p>
                 <p>2、在邮箱中头像->设置->反垃圾->白名单->设置邮件地址白名单</p>
                 <p>
-                  3、将邮箱【laoluo@wuhancoder.com】添加到白名单不知道怎么设置？
+                  3、将邮箱【Caiying@coder.com】添加到白名单不知道怎么设置？
                 </p>
               </div>
               <template #reference>

@@ -64,6 +64,8 @@ const folderList = ref([]);
 const currentFolder = ref({});
 
 const loadAllFolder = async () => {
+  console.log(filePid.value);
+  console.log(currentFileIds.value);
   let result = await proxy.Request({
     url: api.loadAllFolder,
     params: {
@@ -83,6 +85,7 @@ const close = () => {
 
 //展示弹出框对外的方法
 const showFolderDialog = (currentFolder) => {
+  console.log(currentFolder);
   dialogConfig.value.show = true;
   currentFileIds.value = currentFolder;
   filePid.value = "0";
@@ -104,6 +107,7 @@ const selectFolder = (data) => {
 //确定选择目录
 const emit = defineEmits(["folderSelect"]);
 const folderSelect = () => {
+  console.log(filePid.value);
   emit("folderSelect", filePid.value);
 };
 

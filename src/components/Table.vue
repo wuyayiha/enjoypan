@@ -165,6 +165,7 @@ const handlePageNoChange = (pageNo) => {
   props.fetch();
 };
 </script>
+
 <style lang="scss" scoped>
 .pagination {
   padding-top: 10px;

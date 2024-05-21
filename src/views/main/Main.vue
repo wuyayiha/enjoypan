@@ -189,6 +189,7 @@ const emit = defineEmits(["addFile"]);
 
 //添加上传文件
 const addFile = async (fileData) => {
+  console.log(fileData);
   emit("addFile", { file: fileData.file, filePid: currentFolder.value.fileId });
 };
 //添加文件回调
@@ -314,7 +315,7 @@ const newFolder = () => {
 //删除文件夹
 const cancelNameEdit = (index) => {
   const fileData = tableData.value.list[index];
-  if (fileData.fildId) {
+  if (fileData.fileId) {
     fileData.showEdit = false;
   } else {
     tableData.value.list.splice(index, 1);
@@ -378,7 +379,7 @@ const editFileName = (index) => {
   }
   editing.value = true;
   nextTick(() => {
-    editNameRef.value.focus;
+    editNameRef.value.focus();
   });
 };
 
@@ -437,6 +438,7 @@ const delFileBatch = () => {
 //移动目录
 const folderSelectRef = ref();
 const currentMoveFile = ref({});
+
 const moveFolder = (data) => {
   currentMoveFile.value = data;
   folderSelectRef.value.showFolderDialog(data.fileId);
@@ -445,7 +447,7 @@ const moveFolder = (data) => {
 //批量移动
 const moveFolderBatch = () => {
   currentMoveFile.value = {};
-  //批量移动如果选择的是文件夹，那么要讲文件夹也过滤
+  //批量移动如果选择的是文件夹，那么要将文件夹也过滤
   const excludeFileIdList = [currentFolder.value.fileId];
   selectFileList.value.forEach((item) => {
     if (item.folderType == 1) {
@@ -456,6 +458,9 @@ const moveFolderBatch = () => {
 };
 
 const moveFolderDone = async (folderId) => {
+  console.log(currentMoveFile.value.filePid);
+  console.log(currentFolder.value);
+  console.log(currentFolder.value.fileId);
   if (
     currentMoveFile.value.filePid === folderId ||
     currentFolder.value.fileId == folderId

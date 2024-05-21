@@ -218,6 +218,7 @@ const rules = {
   changeSpace: [{ required: true, message: "请输入空间大小" }],
 };
 
+//分配空间
 const updateSpace = (data) => {
   dialogConfig.value.show = true;
   nextTick(() => {
@@ -226,6 +227,7 @@ const updateSpace = (data) => {
   });
 };
 
+//提交表单
 const submitForm = () => {
   formDataRef.value.validate(async (valid) => {
     if (!valid) {

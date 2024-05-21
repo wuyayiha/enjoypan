@@ -57,6 +57,7 @@ const close = () => {
   emit("close");
 };
 
+//屏幕自适应，监听屏幕大小
 const resizeWindow = () => {
   windowWidth.value = window.innerWidth;
 };

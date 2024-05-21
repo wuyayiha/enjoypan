@@ -49,8 +49,6 @@
 </template>
 
 <script setup>
-import AvatarUpload from "@/components/AvatarUpload.vue";
-
 import { ref, reactive, getCurrentInstance, nextTick } from "vue";
 const { proxy } = getCurrentInstance();
 
@@ -62,7 +60,7 @@ const formData = ref({});
 const formDataRef = ref();
 
 const checkRePassword = (rule, value, callback) => {
-  if (value !== formData.value.rePassword) {
+  if (value !== formData.value.password) {
     callback(new Error(rule.message));
   } else {
     callback();

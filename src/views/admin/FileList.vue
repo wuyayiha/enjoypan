@@ -64,26 +64,6 @@
                 >转码失败</span
               >
             </span>
-            <div class="edit-panel" v-if="row.showEdit">
-              <el-input
-                v-model.trim="row.fileNameReal"
-                :maxLength="190"
-                @keyup.enter="saveNameEdit(index)"
-              >
-                <template #suffix>{{ row.fileSuffix }}</template>
-              </el-input>
-              <span
-                :class="[
-                  'iconfont icon-right1',
-                  row.fileNameReal ? '' : 'not-allow',
-                ]"
-                @click="saveNameEdit(index)"
-              ></span>
-              <span
-                class="iconfont icon-error"
-                @click="cancelNameEdit(index)"
-              ></span>
-            </div>
             <span class="op">
               <template v-if="row.showOp && row.fileId">
                 <span

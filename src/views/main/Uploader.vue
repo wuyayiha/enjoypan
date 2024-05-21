@@ -161,6 +161,7 @@ const STATUS = {
   },
 };
 
+// 512KB
 const chunkSize = 1024 * 512;
 const fileList = ref([]);
 const delList = ref([]);
@@ -294,6 +295,8 @@ const uploadFile = async (uid, chunkIndex) => {
 
 const computeMD5 = (fileItem) => {
   let file = fileItem.file;
+
+  //兼容不同浏览器对文件截取方法的不同实现
   let blobSlice =
     File.prototype.slice ||
     File.prototype.mozSlice ||
@@ -313,6 +316,7 @@ const computeMD5 = (fileItem) => {
   loadNext();
   return new Promise((resolve, reject) => {
     let resultFile = getFileByUid(file.uid);
+    console.log(resultFile);
     fileReader.onload = (e) => {
       spark.append(e.target.result); // Append array buffer
       currentChunk++;

@@ -102,11 +102,7 @@ const columns = [
     width: 200,
   },
 ];
-//搜索
-const search = () => {
-  showLoading.value = true;
-  loadDataList();
-};
+
 //列表
 const tableData = ref({});
 const tableOptions = {
